@@ -9,6 +9,10 @@ const cors = require("cors");
 app.use(cors());
 const PORT = process.env.PORT || 3001;
 app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => {
+	res.json("Server started.");
+});
 app.use(router);
 
 app.listen(PORT, (err) => {
